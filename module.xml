@@ -55,7 +55,7 @@
 
 
 
-	
+<!---	
 <Scar>
 	<fmt>TR{{Tree_ID}}-SC{{Scar_ID}}</fmt>
 	<Scar>
@@ -64,7 +64,7 @@
 		<author f="nocertainty"/>
 		<timestamp/>
 		<Scar_type>
-			<!--@SOURCE: ../vocab/scar_types.xml-->
+			<!--@SOURCE: ../vocab/scar_types.xml- ->
 		</Scar_type>
 		<Scar_Height_Above_Ground_mm b="decimal">
 		    <desc>Measure from the ground surface to the bottom of the scar, if applicable. Please note that the scar base is the lowermost area of axe damage, rather than the scar dry face</desc>
@@ -91,7 +91,7 @@
 		<External_camera_ID_scars f="nocertainty">
 			External camera ID (scars)
 		    <desc>Select other cameras used for photography (if applicable)</desc>
-		    <!--@SOURCE: ../vocab/camera_ids.xml-->
+		    <!--@SOURCE: ../vocab/camera_ids.xml- ->
 		</External_camera_ID_scars>
 		<External_camera_file_names_and_attachment f="nocertainty">
 			<desc>Provide file names and brief captions for images taken with external camera, if applicable.</desc>
@@ -104,7 +104,7 @@
 
 	</Scar>
 </Scar>
-
+-->
 
 
 <logic><![CDATA[
