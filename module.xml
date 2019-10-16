@@ -1,0 +1,122 @@
+<!--@POSTPROC: ./postproc.sh-->
+<module>
+<User_List f="nodata">
+  <User_List f="noscroll">
+    <User_List t="list" f="nolabel user" l="Control"/>
+  </User_List>
+<!--   <Manual>
+    <Manual t="webview" f="nolabel"/>
+  </Manual> -->
+</User_List>
+
+<Control f="nodata">
+	<Control f="noscroll">
+
+		<New_Tree t="Text Field" l="Project"/>
+
+ 		<GPS_diagnostics t="gpsdiag"/>
+		<Recent_records t="list"/>
+
+	</Control>
+
+	<search/>
+	<!--"Select User" dropdown has been added using @POSTPROC-->
+
+
+	<Autonumbering>
+		<autonum/>
+	</Autonumbering>
+
+</Control>
+
+<!--
+#######		#######		   ########				 ##  #########	  #######	 ################
+##    ##	##	  ##	 ##	   	   ##			 ##  ##			 ##		##			##
+##     ##	##	   ##	##			##			 ##  ##			##		 ##			##
+##    ##	##	  ##	##			##			 ##  ##			##					##
+##   ##		##   ##		##			##			 ##  ##			##					##
+######		######		##			##			 ##  ######		##					##
+##			##  ##		##			##			 ##  ##			##					##
+##			##   ##		##			##	##		 ##  ##			##		 ##			##
+##			##    ##	 ##		   ##	##		##   ##			 ##		##			##
+##   		##	  ##	   ########		  ######	 #########	  #######			##-->
+
+<Project>
+	<fmt>PR{{Project_ID}}</fmt>
+	<General>
+		<Project_ID f="id autonum nocertainty"/>
+		<author f="nocertainty noannotation"/>
+		<timestamp f="nocertainty noannotation"/>
+		<gps f="notnull"/>
+		<New_Shovel_Probe t="button" lc="Shovel_Probe"/>
+		<List_of_Related_Sovel_Probes f="id autonum" ec="Shovel_Probe"/> 
+	</General>
+</Project>
+
+
+
+	
+<Scar>
+	<fmt>TR{{Tree_ID}}-SC{{Scar_ID}}</fmt>
+	<Scar>
+		<Tree_ID f="id nocertainty" i="Tree/General/Tree_ID" />
+		<Scar_ID f="id autonum nocertainty"/>
+		<author f="nocertainty"/>
+		<timestamp/>
+		<Scar_type>
+			<!--@SOURCE: ../vocab/scar_types.xml-->
+		</Scar_type>
+		<Scar_Height_Above_Ground_mm b="decimal">
+		    <desc>Measure from the ground surface to the bottom of the scar, if applicable. Please note that the scar base is the lowermost area of axe damage, rather than the scar dry face</desc>
+		</Scar_Height_Above_Ground_mm>
+		<Scar_length_mm b="decimal">
+		    <desc>Measure the maximum length of scar, i.e., between the upper- and lower-most cut marks observed</desc>
+		</Scar_length_mm>
+		<Scar_width_mm b="decimal">
+		    <desc>Measure the maximum width of scar, i.e., between the widest lateral cut marks observed</desc>
+		</Scar_width_mm>
+		<Aperture_length_mm b="decimal">
+		    <desc>Only applicable on scars featuring an aperture into the tree hollow, for example, sugarbag scars. Measure the maximum length of the actual aperture.</desc>
+		</Aperture_length_mm>
+		<Aperture_width_mm b="decimal">
+		    <desc>Only applicable on scars featuring an aperture into the tree hollow, for example, sugarbag scars. Measure the maximum width of the actual aperture.</desc>
+		</Aperture_width_mm>
+		<Device_photos_of_scar t="camera">
+		    <desc>Please take one or more overview shots, and if relevant, additional detailed shots of prominent features. If using a DSLR, enter relevant details below and ensure these are uploaded at days end.</desc>
+		</Device_photos_of_scar>
+		<Additional_notes f="nocertainty noannotation">
+			<desc>Additional notes about the feature or associated artefacts not recorded elsewhere.
+			</desc>
+		</Additional_notes>
+		<External_camera_ID_scars f="nocertainty">
+			External camera ID (scars)
+		    <desc>Select other cameras used for photography (if applicable)</desc>
+		    <!--@SOURCE: ../vocab/camera_ids.xml-->
+		</External_camera_ID_scars>
+		<External_camera_file_names_and_attachment f="nocertainty">
+			<desc>Provide file names and brief captions for images taken with external camera, if applicable.</desc>
+		</External_camera_file_names_and_attachment>
+		<External_camera_image_attachment t="file" f="nocertainty">
+			<desc>Upload files on server, and annotate those files with captions.
+			</desc>
+		</External_camera_image_attachment>
+		<New_Scar t="button"/>
+
+	</Scar>
+</Scar>
+
+
+
+<logic><![CDATA[
+<!--@SOURCE: logic/sync.bsh-->
+<!--@SOURCE: logic/gis-shared.bsh-->
+<!--@SOURCE: logic/custom-search.bsh-->
+<!--@SOURCE: logic/recent-records.bsh-->
+<!--@SOURCE: logic/cascade-delete.bsh-->
+<!--@SOURCE: logic/find-in-map.bsh-->
+<!--@SOURCE: logic/autonumbering-validation.bsh-->
+<!--@SOURCE: logic/new-record-in-boundary.bsh-->
+<!--@SOURCE: logic/leave-gps-verification.bsh-->
+]]></logic>
+
+</module>
