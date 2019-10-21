@@ -45,11 +45,11 @@
 	<fmt>PR{{Project_ID}}</fmt>
 	<General>
 		<Project_ID f="id autonum nocertainty"/>
-		<Project_Name t="input"/>
+		<Project_Name t="input" f="nocertainty noannotation"/>
 		<author f="nocertainty noannotation"/>
 		<timestamp f="nocertainty noannotation"/>
 		<gps f="notnull"/>
-		<Team_Members f="persist"/>
+		<Team_Members f="persist nocertainty noannotation"/>
 		<New_Shovel_Probe t="button" lc="Shovel_Probe"/>
 		<List_of_Related_Shovel_Probes ec="Shovel_Probe"/>
 	</General>
@@ -75,9 +75,9 @@
 	<General>
 		<Shovel_Probe_ID f="id autonum nocertainty"/>
 		<Project_ID f="id nocertainty" i="Project/General/Project_ID"/>
-		<author f="nocertainty"/>
-		<timestamp/>
-		<Team_Members i="Project/General/Team_Members"/>
+		<author f="nocertainty noannotation"/>
+		<timestamp f="nocertainty noannotation"/>
+		<Team_Members i="Project/General/Team_Members" f="nocertainty"/>
 		<TP_Number b="decimal"/>
 		<PAD_Number b="decimal"/>
 		<gps f="notnull"/>
@@ -87,9 +87,9 @@
 		</Landform>
 	</General>
 	<Photo>
-		<Photo t="camera"/>
-		<Photo_Comments/>
-		<External_Photo_Filenames/>
+		<Photo t="camera" f="nocertainty"/>
+		<Photo_Comments f="nocertainty noannotation"/>
+		<External_Photo_Filenames f="nocertainty"/>
 	</Photo>
 	<Spit>
 		<New_Spit t="button" lc="Spit"/>
@@ -118,13 +118,13 @@
 		<Spit_ID f="id autonum nocertainty"/>
 		<Shovel_Probe_ID f="id nocertainty" i="Shovel_Probe/General/Shovel_Probe_ID"/>
 		<Project_ID f="id nocertainty" i="Shovel_Probe/General/Project_ID"/>
-		<author f="nocertainty"/>
-		<timestamp/>
+		<author f="nocertainty noannotation"/>
+		<timestamp f="nocertainty"/>
 	</General>
 	<Photo>
-		<Photo t="camera"/>
-		<Photo_Comments/>
-		<External_Photo_Filenames/>
+		<Photo t="camera" f="nocertainty"/>
+		<Photo_Comments f="nocertainty noannotation"/>
+		<External_Photo_Filenames f="nocertainty"/>
 	</Photo>
 	<Layer>
 		<New_Layer t="button" lc="Layer"/>
@@ -153,17 +153,17 @@
 		<Shovel_Probe_ID f="id nocertainty" i="Spit/General/Shovel_Probe_ID"/>
 		<Project_ID f="id nocertainty" i="Spit/General/Project_ID"/>
 		<author f="nocertainty"/>
-		<timestamp/>
+		<timestamp f="nocertainty"/>
 		<Soil_Profile/>
-		<Total_Depth b="decimal"/>
+		<Total_Depth_mm b="decimal"/>
 		<Cultural_Material_Type/>
 		<Artefact_Number b="decimal"/>
-		<Comments/>
+		<Comments f="nocertainty noannotation"/>
 	</General>
 	<Photo>
-		<Photo t="camera"/>
-		<Photo_Comments/>
-		<External_Photo_Filenames/>
+		<Photo t="camera" f="nocertainty"/>
+		<Photo_Comments f="nocertainty noannotation"/>
+		<External_Photo_Filenames f="nocertainty"/>
 	</Photo>
 </Layer>
 
