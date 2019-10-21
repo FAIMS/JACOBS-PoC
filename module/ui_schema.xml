@@ -43,11 +43,8 @@
             </Search>
             <Autonumbering>
               <Next_Project_ID/>
-              <Next_List_of_Related_Sovel_Probes/>
               <Next_Shovel_Probe_ID/>
-              <Next_List_of_Spits/>
               <Next_Spit_ID/>
-              <Next_List_of_Layers/>
               <Next_Layer_ID/>
             </Autonumbering>
           </Control>
@@ -78,7 +75,7 @@
               <Take_From_GPS_1/>
               <Team_Members/>
               <New_Shovel_Probe/>
-              <List_of_Related_Sovel_Probes/>
+              <List_of_Related_Shovel_Probes/>
             </General>
           </Project>
           <Shovel_Probe>
@@ -167,11 +164,8 @@
         </faims>
       </instance>
       <bind nodeset="/faims/Control/Autonumbering/Next_Project_ID" type="decimal"/>
-      <bind nodeset="/faims/Control/Autonumbering/Next_List_of_Related_Sovel_Probes" type="decimal"/>
       <bind nodeset="/faims/Control/Autonumbering/Next_Shovel_Probe_ID" type="decimal"/>
-      <bind nodeset="/faims/Control/Autonumbering/Next_List_of_Spits" type="decimal"/>
       <bind nodeset="/faims/Control/Autonumbering/Next_Spit_ID" type="decimal"/>
-      <bind nodeset="/faims/Control/Autonumbering/Next_List_of_Layers" type="decimal"/>
       <bind nodeset="/faims/Control/Autonumbering/Next_Layer_ID" type="decimal"/>
       <bind nodeset="/faims/Shovel_Probe/General/TP_Number" type="decimal"/>
       <bind nodeset="/faims/Shovel_Probe/General/PAD_Number" type="decimal"/>
@@ -271,20 +265,11 @@
         <input ref="Next_Project_ID" faims_style_class="required">
           <label>{Next_Project_ID}</label>
         </input>
-        <input ref="Next_List_of_Related_Sovel_Probes" faims_style_class="required">
-          <label>{Next_List_of_Related_Sovel_Probes}</label>
-        </input>
         <input ref="Next_Shovel_Probe_ID" faims_style_class="required">
           <label>{Next_Shovel_Probe_ID}</label>
         </input>
-        <input ref="Next_List_of_Spits" faims_style_class="required">
-          <label>{Next_List_of_Spits}</label>
-        </input>
         <input ref="Next_Spit_ID" faims_style_class="required">
           <label>{Next_Spit_ID}</label>
-        </input>
-        <input ref="Next_List_of_Layers" faims_style_class="required">
-          <label>{Next_List_of_Layers}</label>
         </input>
         <input ref="Next_Layer_ID" faims_style_class="required">
           <label>{Next_Layer_ID}</label>
@@ -349,8 +334,8 @@
         <trigger ref="New_Shovel_Probe">
           <label>{New_Shovel_Probe}</label>
         </trigger>
-        <select1 appearance="compact" ref="List_of_Related_Sovel_Probes">
-          <label>{List_of_Related_Sovel_Probes}</label>
+        <select1 appearance="compact" ref="List_of_Related_Shovel_Probes">
+          <label>{List_of_Related_Shovel_Probes}</label>
           <item>
             <label>Options not loaded</label>
             <value>Options not loaded</value>
@@ -425,9 +410,13 @@
         <input faims_attribute_name="Site-PAD Name" faims_attribute_type="measure" ref="Site-PAD_Name">
           <label>{Site_PAD_Name}</label>
         </input>
-        <input faims_attribute_name="Landform" faims_attribute_type="measure" ref="Landform">
-          <label>{Landform}</label>
-        </input>
+        <select1 faims_attribute_name="Landform" faims_attribute_type="vocab" ref="Landform">
+          <label>{_SOURCE__vocabs_landform_xml}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
       </group>
       <group ref="Photo">
         <label>{Photo}</label>

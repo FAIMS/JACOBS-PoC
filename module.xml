@@ -50,9 +50,24 @@
 		<gps f="notnull"/>
 		<Team_Members f="persist"/>
 		<New_Shovel_Probe t="button" lc="Shovel_Probe"/>
-		<List_of_Related_Sovel_Probes f="id autonum" ec="Shovel_Probe"/>
+		<List_of_Related_Shovel_Probes ec="Shovel_Probe"/>
 	</General>
 </Project>
+
+<!--
+  ########		##		##	  ##########	##		  ##	##########	##
+ ##		 ##		##		##	 ##		   ##	##		  ##	##			##
+##				##		##	##			##	##		  ##	##			##
+##				##		##	##			##	##		  ##	##			##
+ ##				##		##	##			##	##		  ##	##			##
+  #######		##########	##			##	##		  ##	#######		##
+        ##		##		##	##			##	##		  ##	##			##
+         ##		##		##	##			##	##		  ##	##			##
+         ##		##		##	##			##	 ##		 ##		##			##
+##      ##		##		##	 ##		   ##	  ##	##		##			##
+ ########		##		##	  ##########		####		##########	##########-->
+
+
 
 <Shovel_Probe>
 	<fmt>PR{{Project_ID}}-SH{{Shovel_Probe_ID}}</fmt>
@@ -67,7 +82,14 @@
 		<gps f="notnull"/>
 		<Site-PAD_Name t="input"/>
 		<Landform>
-			<!--@SOURCE: ../vocab/landform.xml-->
+			<!--@SOURCE: vocabs/landform.xml-->
+			<opts>
+				<opt>Mountainous</opt>
+				<opt>Plain</opt>
+				<opt>Rolling Hills</opt>
+				<opt>Steep Hills</opt>
+				<opt>Undulating Plain</opt>
+			</opts>
 		</Landform>
 	</General>
 	<Photo>
@@ -77,9 +99,24 @@
 	</Photo>
 	<Spit>
 		<New_Spit t="button" lc="Spit"/>
-		<List_of_Spits f="id autonum" ec="Spit"/>
+		<List_of_Spits ec="Spit"/>
 	</Spit>
 </Shovel_Probe>
+
+<!--
+  ########		#########	##########	##########
+ ##		 ##		##		##		##			##
+##				##		 ##		##			##
+##				##		 ##		##			##
+ ##				##		##		##			##
+  #######		#########		##			##
+        ##		##				##			##
+         ##		##				##			##
+         ##		##				##			##
+##      ##		##				##			##
+ ########		##			##########		##-->
+
+
 
 <Spit>
 	<fmt>PR{{Project_ID}}-SH{{Shovel_Probe_ID}}-SP{{Spit_ID}}</fmt>
@@ -97,9 +134,22 @@
 	</Photo>
 	<Layer>
 		<New_Layer t="button" lc="Layer"/>
-		<List_of_Layers f="id autonum" ec="Layer"/>
+		<List_of_Layers ec="Layer"/>
 	</Layer>	
 </Spit>
+
+<!--
+##			  #######	##	      ## ########	#########
+##			 ##		##	 ##	     ##	 ##			##		##
+##			##		 ##	  ##    ##	 ##			##		 ##
+##			##		 ##	   ##  ##	 ##			##		 ##
+##			##		 ##		####	 #####		##		##
+##			###########	     ##		 ##			#########
+##			##		 ##	     ##	     ##			##	  ##
+##			##		 ##	     ##		 ##			##	   ##
+##			##		 ##	     ##		 ##			##		##
+##########	##		 ##	     ##		 ########	##		 ##
+-->
 
 <Layer>
 	<fmt>PR{{Project_ID}}-SH{{Shovel_Probe_ID}}-SP{{Spit_ID}}-LA{{Layer_ID}}</fmt>

@@ -323,11 +323,8 @@ REF_TO_TYPE.put("Control/Search/Search_Button", "button");
 REF_TO_TYPE.put("Control/Search/Entity_Types", "dropdown");
 REF_TO_TYPE.put("Control/Search/Entity_List", "list");
 REF_TO_TYPE.put("Control/Autonumbering/Next_Project_ID", "input");
-REF_TO_TYPE.put("Control/Autonumbering/Next_List_of_Related_Sovel_Probes", "input");
 REF_TO_TYPE.put("Control/Autonumbering/Next_Shovel_Probe_ID", "input");
-REF_TO_TYPE.put("Control/Autonumbering/Next_List_of_Spits", "input");
 REF_TO_TYPE.put("Control/Autonumbering/Next_Spit_ID", "input");
-REF_TO_TYPE.put("Control/Autonumbering/Next_List_of_Layers", "input");
 REF_TO_TYPE.put("Control/Autonumbering/Next_Layer_ID", "input");
 REF_TO_TYPE.put("Project/General/Project_ID", "input");
 REF_TO_TYPE.put("Project/General/Project_author", "input");
@@ -340,7 +337,7 @@ REF_TO_TYPE.put("Project/General/Accuracy", "input");
 REF_TO_TYPE.put("Project/General/Take_From_GPS_1", "button");
 REF_TO_TYPE.put("Project/General/Team_Members", "input");
 REF_TO_TYPE.put("Project/General/New_Shovel_Probe", "button");
-REF_TO_TYPE.put("Project/General/List_of_Related_Sovel_Probes", "list");
+REF_TO_TYPE.put("Project/General/List_of_Related_Shovel_Probes", "list");
 REF_TO_TYPE.put("Shovel_Probe/General/Shovel_Probe_ID", "input");
 REF_TO_TYPE.put("Shovel_Probe/General/Project_ID", "input");
 REF_TO_TYPE.put("Shovel_Probe/General/Shovel_Probe_author", "input");
@@ -355,7 +352,7 @@ REF_TO_TYPE.put("Shovel_Probe/General/Easting", "input");
 REF_TO_TYPE.put("Shovel_Probe/General/Accuracy", "input");
 REF_TO_TYPE.put("Shovel_Probe/General/Take_From_GPS_1", "button");
 REF_TO_TYPE.put("Shovel_Probe/General/Site-PAD_Name", "input");
-REF_TO_TYPE.put("Shovel_Probe/General/Landform", "input");
+REF_TO_TYPE.put("Shovel_Probe/General/Landform", "dropdown");
 REF_TO_TYPE.put("Shovel_Probe/Photo/Photo", "camera");
 REF_TO_TYPE.put("Shovel_Probe/Photo/Photo_Button_1", "button");
 REF_TO_TYPE.put("Shovel_Probe/Photo/Photo_Comments", "input");
@@ -593,11 +590,8 @@ HashSet getTabsAsHashSet() {
 List getStartingIdRefs() {
   List l = new ArrayList();
   l.add("Control/Autonumbering/Next_Project_ID");
-  l.add("Control/Autonumbering/Next_List_of_Related_Sovel_Probes");
   l.add("Control/Autonumbering/Next_Shovel_Probe_ID");
-  l.add("Control/Autonumbering/Next_List_of_Spits");
   l.add("Control/Autonumbering/Next_Spit_ID");
-  l.add("Control/Autonumbering/Next_List_of_Layers");
   l.add("Control/Autonumbering/Next_Layer_ID");
   return l;
 }
@@ -3248,11 +3242,8 @@ String validateFields(List fields, String format) {
 void validateControl() {
   List f = new ArrayList(); // Fields to be validated
   f.add(fieldPair("Control/Autonumbering/Next_Project_ID", "{Next_Project_ID}"));
-  f.add(fieldPair("Control/Autonumbering/Next_List_of_Related_Sovel_Probes", "{Next_List_of_Related_Sovel_Probes}"));
   f.add(fieldPair("Control/Autonumbering/Next_Shovel_Probe_ID", "{Next_Shovel_Probe_ID}"));
-  f.add(fieldPair("Control/Autonumbering/Next_List_of_Spits", "{Next_List_of_Spits}"));
   f.add(fieldPair("Control/Autonumbering/Next_Spit_ID", "{Next_Spit_ID}"));
-  f.add(fieldPair("Control/Autonumbering/Next_List_of_Layers", "{Next_List_of_Layers}"));
   f.add(fieldPair("Control/Autonumbering/Next_Layer_ID", "{Next_Layer_ID}"));
 
   String validationMessage = validateFields(f, "PLAINTEXT");
@@ -3824,17 +3815,12 @@ void newProject(String parent){
     showWarning("{Alert}", "{A_next_ID_has_not_been_entered_please_provide_one}");
     return;
   }
-  if (isNull("Control/Autonumbering/Next_List_of_Related_Sovel_Probes")) {
-    showWarning("{Alert}", "{A_next_ID_has_not_been_entered_please_provide_one}");
-    return;
-  }
 
   setUuid(tabgroup, null);
   newTabGroup(tabgroup);
   populateAuthorAndTimestamp(tabgroup);
   populateEntityListsInTabGroup(tabgroup);
   incAutoNum("Project/General/Project_ID");
-  incAutoNum("Project/General/List_of_Related_Sovel_Probes");
 
   executeOnEvent(tabgroup, "create");
 }
@@ -3854,17 +3840,12 @@ void newShovelProbe(String parent){
     showWarning("{Alert}", "{A_next_ID_has_not_been_entered_please_provide_one}");
     return;
   }
-  if (isNull("Control/Autonumbering/Next_List_of_Spits")) {
-    showWarning("{Alert}", "{A_next_ID_has_not_been_entered_please_provide_one}");
-    return;
-  }
 
   setUuid(tabgroup, null);
   newTabGroup(tabgroup);
   populateAuthorAndTimestamp(tabgroup);
   populateEntityListsInTabGroup(tabgroup);
   incAutoNum("Shovel_Probe/General/Shovel_Probe_ID");
-  incAutoNum("Shovel_Probe/Spit/List_of_Spits");
 
   executeOnEvent(tabgroup, "create");
 }
@@ -3884,17 +3865,12 @@ void newSpit(String parent){
     showWarning("{Alert}", "{A_next_ID_has_not_been_entered_please_provide_one}");
     return;
   }
-  if (isNull("Control/Autonumbering/Next_List_of_Layers")) {
-    showWarning("{Alert}", "{A_next_ID_has_not_been_entered_please_provide_one}");
-    return;
-  }
 
   setUuid(tabgroup, null);
   newTabGroup(tabgroup);
   populateAuthorAndTimestamp(tabgroup);
   populateEntityListsInTabGroup(tabgroup);
   incAutoNum("Spit/General/Spit_ID");
-  incAutoNum("Spit/Layer/List_of_Layers");
 
   executeOnEvent(tabgroup, "create");
 }
@@ -3933,7 +3909,6 @@ void duplicateProject(){
   setUuid(tabgroup, "");
   disableAutoSave(tabgroup);
   incAutoNum("Project/General/Project_ID");
-  incAutoNum("Project/General/List_of_Related_Sovel_Probes");
   clearGpsInTabGroup(tabgroup);
   populateAuthorAndTimestamp(tabgroup);
   populateEntityListsInTabGroup(tabgroup);
@@ -3981,7 +3956,6 @@ void duplicateShovelProbe(){
   setUuid(tabgroup, "");
   disableAutoSave(tabgroup);
   incAutoNum("Shovel_Probe/General/Shovel_Probe_ID");
-  incAutoNum("Shovel_Probe/Spit/List_of_Spits");
   clearGpsInTabGroup(tabgroup);
   populateAuthorAndTimestamp(tabgroup);
   populateEntityListsInTabGroup(tabgroup);
@@ -4029,7 +4003,6 @@ void duplicateSpit(){
   setUuid(tabgroup, "");
   disableAutoSave(tabgroup);
   incAutoNum("Spit/General/Spit_ID");
-  incAutoNum("Spit/Layer/List_of_Layers");
   clearGpsInTabGroup(tabgroup);
   populateAuthorAndTimestamp(tabgroup);
   populateEntityListsInTabGroup(tabgroup);
@@ -4396,11 +4369,8 @@ void loadEntityFromScannedQrCode() {
 /******************************************************************************/
 Map AUTONUM_DEST_TO_SOURCE = new HashMap();
 AUTONUM_DEST_TO_SOURCE.put("Project/General/Project_ID", "Control/Autonumbering/Next_Project_ID");
-AUTONUM_DEST_TO_SOURCE.put("Project/General/List_of_Related_Sovel_Probes", "Control/Autonumbering/Next_List_of_Related_Sovel_Probes");
 AUTONUM_DEST_TO_SOURCE.put("Shovel_Probe/General/Shovel_Probe_ID", "Control/Autonumbering/Next_Shovel_Probe_ID");
-AUTONUM_DEST_TO_SOURCE.put("Shovel_Probe/Spit/List_of_Spits", "Control/Autonumbering/Next_List_of_Spits");
 AUTONUM_DEST_TO_SOURCE.put("Spit/General/Spit_ID", "Control/Autonumbering/Next_Spit_ID");
-AUTONUM_DEST_TO_SOURCE.put("Spit/Layer/List_of_Layers", "Control/Autonumbering/Next_List_of_Layers");
 AUTONUM_DEST_TO_SOURCE.put("Layer/General/Layer_ID", "Control/Autonumbering/Next_Layer_ID");
 
 /*
@@ -4599,7 +4569,7 @@ String getEntityMenuPopulationFunction(String[] menuDescriptor) {
 
 ENTITY_MENUS = new ArrayList();
 ENTITY_MENUS.add(new String[] {
-    "Project/General/List_of_Related_Sovel_Probes",
+    "Project/General/List_of_Related_Shovel_Probes",
     "getUuid(\"Project\")",
     "Shovel Probe",
     "Project - Shovel Probe"
@@ -4631,7 +4601,7 @@ for (m : ENTITY_MENUS) {
   addOnEvent(ref, evt, cmd);
 }
 
-addOnEvent("Project/General/List_of_Related_Sovel_Probes", "click", "loadEntity()");
+addOnEvent("Project/General/List_of_Related_Shovel_Probes", "click", "loadEntity()");
 addOnEvent("Shovel_Probe/Spit/List_of_Spits", "click", "loadEntity()");
 addOnEvent("Spit/Layer/List_of_Layers", "click", "loadEntity()");
 /******************************************************************************/
