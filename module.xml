@@ -12,7 +12,7 @@
 <Control f="nodata">
 	<Control f="noscroll">
 
-		<New_Tree t="Text Field" l="Project"/>
+		<New_Project t="input" l="Project"/>
 
  		<GPS_diagnostics t="gpsdiag"/>
 		<Recent_records t="list"/>
@@ -48,63 +48,80 @@
 		<author f="nocertainty noannotation"/>
 		<timestamp f="nocertainty noannotation"/>
 		<gps f="notnull"/>
+		<Team_Members f="persist"/>
 		<New_Shovel_Probe t="button" lc="Shovel_Probe"/>
-		<List_of_Related_Sovel_Probes f="id autonum" ec="Shovel_Probe"/> 
+		<List_of_Related_Sovel_Probes f="id autonum" ec="Shovel_Probe"/>
 	</General>
 </Project>
 
-
-
-<!---	
-<Scar>
-	<fmt>TR{{Tree_ID}}-SC{{Scar_ID}}</fmt>
-	<Scar>
-		<Tree_ID f="id nocertainty" i="Tree/General/Tree_ID" />
-		<Scar_ID f="id autonum nocertainty"/>
+<Shovel_Probe>
+	<fmt>PR{{Project_ID}}-SH{{Shovel_Probe_ID}}</fmt>
+	<General>
+		<Shovel_Probe_ID f="id autonum nocertainty"/>
+		<Project_ID f="id nocertainty" i="Project/General/Project_ID"/>
 		<author f="nocertainty"/>
 		<timestamp/>
-		<Scar_type>
-			<!--@SOURCE: ../vocab/scar_types.xml- ->
-		</Scar_type>
-		<Scar_Height_Above_Ground_mm b="decimal">
-		    <desc>Measure from the ground surface to the bottom of the scar, if applicable. Please note that the scar base is the lowermost area of axe damage, rather than the scar dry face</desc>
-		</Scar_Height_Above_Ground_mm>
-		<Scar_length_mm b="decimal">
-		    <desc>Measure the maximum length of scar, i.e., between the upper- and lower-most cut marks observed</desc>
-		</Scar_length_mm>
-		<Scar_width_mm b="decimal">
-		    <desc>Measure the maximum width of scar, i.e., between the widest lateral cut marks observed</desc>
-		</Scar_width_mm>
-		<Aperture_length_mm b="decimal">
-		    <desc>Only applicable on scars featuring an aperture into the tree hollow, for example, sugarbag scars. Measure the maximum length of the actual aperture.</desc>
-		</Aperture_length_mm>
-		<Aperture_width_mm b="decimal">
-		    <desc>Only applicable on scars featuring an aperture into the tree hollow, for example, sugarbag scars. Measure the maximum width of the actual aperture.</desc>
-		</Aperture_width_mm>
-		<Device_photos_of_scar t="camera">
-		    <desc>Please take one or more overview shots, and if relevant, additional detailed shots of prominent features. If using a DSLR, enter relevant details below and ensure these are uploaded at days end.</desc>
-		</Device_photos_of_scar>
-		<Additional_notes f="nocertainty noannotation">
-			<desc>Additional notes about the feature or associated artefacts not recorded elsewhere.
-			</desc>
-		</Additional_notes>
-		<External_camera_ID_scars f="nocertainty">
-			External camera ID (scars)
-		    <desc>Select other cameras used for photography (if applicable)</desc>
-		    <!--@SOURCE: ../vocab/camera_ids.xml- ->
-		</External_camera_ID_scars>
-		<External_camera_file_names_and_attachment f="nocertainty">
-			<desc>Provide file names and brief captions for images taken with external camera, if applicable.</desc>
-		</External_camera_file_names_and_attachment>
-		<External_camera_image_attachment t="file" f="nocertainty">
-			<desc>Upload files on server, and annotate those files with captions.
-			</desc>
-		</External_camera_image_attachment>
-		<New_Scar t="button"/>
+		<Team_Members i="Project/General/Team_Members"/>
+		<TP_Number b="decimal"/>
+		<PAD_Number b="decimal"/>
+		<gps f="notnull"/>
+		<Site-PAD_Name t="input"/>
+		<Landform>
+			<!--@SOURCE: ../vocab/landform.xml-->
+		</Landform>
+	</General>
+	<Photo>
+		<Photo t="camera"/>
+		<Photo_Comments/>
+		<External_Photo_Filenames/>
+	</Photo>
+	<Spit>
+		<New_Spit t="button" lc="Spit"/>
+		<List_of_Spits f="id autonum" ec="Spit"/>
+	</Spit>
+</Shovel_Probe>
 
-	</Scar>
-</Scar>
--->
+<Spit>
+	<fmt>PR{{Project_ID}}-SH{{Shovel_Probe_ID}}-SP{{Spit_ID}}</fmt>
+	<General>
+		<Spit_ID f="id autonum nocertainty"/>
+		<Shovel_Probe_ID f="id nocertainty" i="Shovel_Probe/General/Shovel_Probe_ID"/>
+		<Project_ID f="id nocertainty" i="Shovel_Probe/General/Project_ID"/>
+		<author f="nocertainty"/>
+		<timestamp/>
+	</General>
+	<Photo>
+		<Photo t="camera"/>
+		<Photo_Comments/>
+		<External_Photo_Filenames/>
+	</Photo>
+	<Layer>
+		<New_Layer t="button" lc="Layer"/>
+		<List_of_Layers f="id autonum" ec="Layer"/>
+	</Layer>	
+</Spit>
+
+<Layer>
+	<fmt>PR{{Project_ID}}-SH{{Shovel_Probe_ID}}-SP{{Spit_ID}}-LA{{Layer_ID}}</fmt>
+	<General>
+		<Layer_ID f="id autonum nocertainty"/>
+		<Spit_ID f="id nocertainty" i="Spit/General/Spit_ID"/>
+		<Shovel_Probe_ID f="id nocertainty" i="Spit/General/Shovel_Probe_ID"/>
+		<Project_ID f="id nocertainty" i="Spit/General/Project_ID"/>
+		<author f="nocertainty"/>
+		<timestamp/>
+		<Soil_Profile/>
+		<Total_Depth b="decimal"/>
+		<Cultural_Material_Type/>
+		<Artefact_Number b="decimal"/>
+		<Comments/>
+	</General>
+	<Photo>
+		<Photo t="camera"/>
+		<Photo_Comments/>
+		<External_Photo_Filenames/>
+	</Photo>
+</Layer>
 
 
 <logic><![CDATA[

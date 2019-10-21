@@ -1,0 +1,577 @@
+<?xml version='1.0' encoding='utf-8'?>
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:jr="http://openrosa.org/javarosa" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>FILL THIS IN</h:title>
+    <model>
+      <instance>
+        <faims id="FILL_THIS_IN">
+          <!--START: Style-->
+          <style>
+            <orientation>
+              <orientation/>
+            </orientation>
+            <even>
+              <layout_weight/>
+            </even>
+            <large>
+              <layout_weight/>
+            </large>
+          </style>
+          <!--END: Style-->
+          <User_List>
+            <User_List>
+              <User_List/>
+            </User_List>
+          </User_List>
+          <Control>
+            <Control>
+              <New_Project/>
+              <GPS_diagnostics/>
+              <Recent_records/>
+            </Control>
+            <Search>
+              <Colgroup_0>
+                <Col_0>
+                  <Search_Term/>
+                </Col_0>
+                <Col_1>
+                  <Search_Button/>
+                </Col_1>
+              </Colgroup_0>
+              <Entity_Types/>
+              <Entity_List/>
+            </Search>
+            <Autonumbering>
+              <Next_Project_ID/>
+              <Next_List_of_Related_Sovel_Probes/>
+              <Next_Shovel_Probe_ID/>
+              <Next_List_of_Spits/>
+              <Next_Spit_ID/>
+              <Next_List_of_Layers/>
+              <Next_Layer_ID/>
+            </Autonumbering>
+          </Control>
+          <Project>
+            <General>
+              <Project_ID/>
+              <Project_author/>
+              <Project_timestamp/>
+              <Colgroup_1>
+                <Col_1>
+                  <Latitude/>
+                </Col_1>
+                <Col_2>
+                  <Longitude/>
+                </Col_2>
+              </Colgroup_1>
+              <Colgroup_2>
+                <Col_1>
+                  <Northing/>
+                </Col_1>
+                <Col_2>
+                  <Easting/>
+                </Col_2>
+                <Col_3>
+                  <Accuracy/>
+                </Col_3>
+              </Colgroup_2>
+              <Take_From_GPS_1/>
+              <Team_Members/>
+              <New_Shovel_Probe/>
+              <List_of_Related_Sovel_Probes/>
+            </General>
+          </Project>
+          <Shovel_Probe>
+            <General>
+              <Shovel_Probe_ID/>
+              <Project_ID/>
+              <Shovel_Probe_author/>
+              <Shovel_Probe_timestamp/>
+              <Team_Members/>
+              <TP_Number/>
+              <PAD_Number/>
+              <Colgroup_1>
+                <Col_1>
+                  <Latitude/>
+                </Col_1>
+                <Col_2>
+                  <Longitude/>
+                </Col_2>
+              </Colgroup_1>
+              <Colgroup_2>
+                <Col_1>
+                  <Northing/>
+                </Col_1>
+                <Col_2>
+                  <Easting/>
+                </Col_2>
+                <Col_3>
+                  <Accuracy/>
+                </Col_3>
+              </Colgroup_2>
+              <Take_From_GPS_1/>
+              <Site-PAD_Name/>
+              <Landform/>
+            </General>
+            <Photo>
+              <Photo/>
+              <Photo_Button_1/>
+              <Photo_Comments/>
+              <External_Photo_Filenames/>
+            </Photo>
+            <Spit>
+              <New_Spit/>
+              <List_of_Spits/>
+            </Spit>
+          </Shovel_Probe>
+          <Spit>
+            <General>
+              <Spit_ID/>
+              <Shovel_Probe_ID/>
+              <Project_ID/>
+              <Spit_author/>
+              <Spit_timestamp/>
+            </General>
+            <Photo>
+              <Photo/>
+              <Photo_Button_1/>
+              <Photo_Comments/>
+              <External_Photo_Filenames/>
+            </Photo>
+            <Layer>
+              <New_Layer/>
+              <List_of_Layers/>
+            </Layer>
+          </Spit>
+          <Layer>
+            <General>
+              <Layer_ID/>
+              <Spit_ID/>
+              <Shovel_Probe_ID/>
+              <Project_ID/>
+              <Layer_author/>
+              <Layer_timestamp/>
+              <Soil_Profile/>
+              <Total_Depth/>
+              <Cultural_Material_Type/>
+              <Artefact_Number/>
+              <Comments/>
+            </General>
+            <Photo>
+              <Photo/>
+              <Photo_Button_1/>
+              <Photo_Comments/>
+              <External_Photo_Filenames/>
+            </Photo>
+          </Layer>
+        </faims>
+      </instance>
+      <bind nodeset="/faims/Control/Autonumbering/Next_Project_ID" type="decimal"/>
+      <bind nodeset="/faims/Control/Autonumbering/Next_List_of_Related_Sovel_Probes" type="decimal"/>
+      <bind nodeset="/faims/Control/Autonumbering/Next_Shovel_Probe_ID" type="decimal"/>
+      <bind nodeset="/faims/Control/Autonumbering/Next_List_of_Spits" type="decimal"/>
+      <bind nodeset="/faims/Control/Autonumbering/Next_Spit_ID" type="decimal"/>
+      <bind nodeset="/faims/Control/Autonumbering/Next_List_of_Layers" type="decimal"/>
+      <bind nodeset="/faims/Control/Autonumbering/Next_Layer_ID" type="decimal"/>
+      <bind nodeset="/faims/Shovel_Probe/General/TP_Number" type="decimal"/>
+      <bind nodeset="/faims/Shovel_Probe/General/PAD_Number" type="decimal"/>
+      <bind nodeset="/faims/Layer/General/Total_Depth" type="decimal"/>
+      <bind nodeset="/faims/Layer/General/Artefact_Number" type="decimal"/>
+    </model>
+  </h:head>
+  <h:body>
+    <!--START: Style-->
+    <group ref="style">
+      <label/>
+      <group ref="orientation">
+        <label/>
+        <input ref="orientation">
+          <label>horizontal</label>
+        </input>
+      </group>
+      <group ref="even">
+        <label/>
+        <input ref="layout_weight">
+          <label>1</label>
+        </input>
+      </group>
+      <group ref="large">
+        <label/>
+        <input ref="layout_weight">
+          <label>3</label>
+        </input>
+      </group>
+    </group>
+    <!--END: Style-->
+    <group ref="User_List">
+      <label>{User_List}</label>
+      <group ref="User_List" faims_scrollable="false">
+        <label>{User_List}</label>
+        <select1 appearance="compact" ref="User_List">
+          <label/>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+      </group>
+    </group>
+    <group ref="Control">
+      <label>{Control}</label>
+      <group ref="Control" faims_scrollable="false">
+        <label>{Control}</label>
+        <input ref="New_Project">
+          <label>{New_Project}</label>
+        </input>
+        <input faims_read_only="true" ref="GPS_diagnostics">
+          <label>{GPS_diagnostics}</label>
+        </input>
+        <select1 appearance="compact" ref="Recent_records">
+          <label>{Recent_records}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+      </group>
+      <group ref="Search" faims_scrollable="false">
+        <label>{Search}</label>
+        <group ref="Colgroup_0" faims_style="orientation">
+          <label/>
+          <group ref="Col_0" faims_style="even">
+            <label/>
+            <input ref="Search_Term">
+              <label>{Search_Term}</label>
+            </input>
+          </group>
+          <group ref="Col_1" faims_style="large">
+            <label/>
+            <trigger ref="Search_Button">
+              <label>{Search}</label>
+            </trigger>
+          </group>
+        </group>
+        <select1 ref="Entity_Types">
+          <label>{Entity_Types}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+        <select1 appearance="compact" ref="Entity_List">
+          <label>{Entity_List}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+      </group>
+      <group ref="Autonumbering">
+        <label>{Autonumbering}</label>
+        <input ref="Next_Project_ID" faims_style_class="required">
+          <label>{Next_Project_ID}</label>
+        </input>
+        <input ref="Next_List_of_Related_Sovel_Probes" faims_style_class="required">
+          <label>{Next_List_of_Related_Sovel_Probes}</label>
+        </input>
+        <input ref="Next_Shovel_Probe_ID" faims_style_class="required">
+          <label>{Next_Shovel_Probe_ID}</label>
+        </input>
+        <input ref="Next_List_of_Spits" faims_style_class="required">
+          <label>{Next_List_of_Spits}</label>
+        </input>
+        <input ref="Next_Spit_ID" faims_style_class="required">
+          <label>{Next_Spit_ID}</label>
+        </input>
+        <input ref="Next_List_of_Layers" faims_style_class="required">
+          <label>{Next_List_of_Layers}</label>
+        </input>
+        <input ref="Next_Layer_ID" faims_style_class="required">
+          <label>{Next_Layer_ID}</label>
+        </input>
+      </group>
+    </group>
+    <group ref="Project" faims_archent_type="Project">
+      <label>{Project}</label>
+      <group ref="General">
+        <label>{General}</label>
+        <input faims_attribute_name="Project ID" faims_attribute_type="measure" ref="Project_ID" faims_certainty="false">
+          <label>{Project_ID}</label>
+        </input>
+        <input faims_attribute_name="Project author" faims_attribute_type="measure" ref="Project_author" faims_read_only="true" faims_annotation="false" faims_certainty="false">
+          <label>{Author}</label>
+        </input>
+        <input faims_attribute_name="Project timestamp" faims_attribute_type="measure" ref="Project_timestamp" faims_read_only="true" faims_annotation="false" faims_certainty="false">
+          <label>{Timestamp}</label>
+        </input>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Latitude" faims_attribute_type="measure" ref="Latitude" faims_style_class="required" faims_read_only="true">
+              <label>{Latitude}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Longitude" faims_attribute_type="measure" ref="Longitude" faims_style_class="required" faims_read_only="true">
+              <label>{Longitude}</label>
+            </input>
+          </group>
+        </group>
+        <group ref="Colgroup_2" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Northing" faims_attribute_type="measure" ref="Northing" faims_style_class="required" faims_read_only="true">
+              <label>{Northing}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Easting" faims_attribute_type="measure" ref="Easting" faims_style_class="required" faims_read_only="true">
+              <label>{Easting}</label>
+            </input>
+          </group>
+          <group ref="Col_3" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Accuracy" faims_attribute_type="measure" ref="Accuracy" faims_style_class="required" faims_read_only="true">
+              <label>{Accuracy}</label>
+            </input>
+          </group>
+        </group>
+        <trigger ref="Take_From_GPS_1">
+          <label>{Take_From_GPS}</label>
+        </trigger>
+        <input faims_attribute_name="Team Members" faims_attribute_type="measure" ref="Team_Members">
+          <label>{Team_Members}</label>
+        </input>
+        <trigger ref="New_Shovel_Probe">
+          <label>{New_Shovel_Probe}</label>
+        </trigger>
+        <select1 appearance="compact" ref="List_of_Related_Sovel_Probes">
+          <label>{List_of_Related_Sovel_Probes}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+      </group>
+    </group>
+    <group ref="Shovel_Probe" faims_archent_type="Shovel Probe">
+      <label>{Shovel_Probe}</label>
+      <group ref="General">
+        <label>{General}</label>
+        <input faims_attribute_name="Shovel Probe ID" faims_attribute_type="measure" ref="Shovel_Probe_ID" faims_certainty="false">
+          <label>{Shovel_Probe_ID}</label>
+        </input>
+        <input faims_attribute_name="Project ID" faims_attribute_type="measure" ref="Project_ID" faims_certainty="false">
+          <label>{Project_ID}</label>
+        </input>
+        <input faims_attribute_name="Shovel Probe author" faims_attribute_type="measure" ref="Shovel_Probe_author" faims_read_only="true" faims_certainty="false">
+          <label>{Author}</label>
+        </input>
+        <input faims_attribute_name="Shovel Probe timestamp" faims_attribute_type="measure" ref="Shovel_Probe_timestamp" faims_read_only="true">
+          <label>{Timestamp}</label>
+        </input>
+        <input faims_attribute_name="Team Members" faims_attribute_type="measure" ref="Team_Members">
+          <label>{Team_Members}</label>
+        </input>
+        <input faims_attribute_name="TP Number" faims_attribute_type="measure" ref="TP_Number">
+          <label>{TP_Number}</label>
+        </input>
+        <input faims_attribute_name="PAD Number" faims_attribute_type="measure" ref="PAD_Number">
+          <label>{PAD_Number}</label>
+        </input>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Latitude" faims_attribute_type="measure" ref="Latitude" faims_style_class="required" faims_read_only="true">
+              <label>{Latitude}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Longitude" faims_attribute_type="measure" ref="Longitude" faims_style_class="required" faims_read_only="true">
+              <label>{Longitude}</label>
+            </input>
+          </group>
+        </group>
+        <group ref="Colgroup_2" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Northing" faims_attribute_type="measure" ref="Northing" faims_style_class="required" faims_read_only="true">
+              <label>{Northing}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Easting" faims_attribute_type="measure" ref="Easting" faims_style_class="required" faims_read_only="true">
+              <label>{Easting}</label>
+            </input>
+          </group>
+          <group ref="Col_3" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Accuracy" faims_attribute_type="measure" ref="Accuracy" faims_style_class="required" faims_read_only="true">
+              <label>{Accuracy}</label>
+            </input>
+          </group>
+        </group>
+        <trigger ref="Take_From_GPS_1">
+          <label>{Take_From_GPS}</label>
+        </trigger>
+        <input faims_attribute_name="Site-PAD Name" faims_attribute_type="measure" ref="Site-PAD_Name">
+          <label>{Site_PAD_Name}</label>
+        </input>
+        <input faims_attribute_name="Landform" faims_attribute_type="measure" ref="Landform">
+          <label>{Landform}</label>
+        </input>
+      </group>
+      <group ref="Photo">
+        <label>{Photo}</label>
+        <select faims_sync="true" type="camera" faims_attribute_name="Photo" faims_attribute_type="measure" ref="Photo">
+          <label>{Photo}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select>
+        <trigger ref="Photo_Button_1">
+          <label>{Photo}</label>
+        </trigger>
+        <input faims_attribute_name="Photo Comments" faims_attribute_type="measure" ref="Photo_Comments">
+          <label>{Photo_Comments}</label>
+        </input>
+        <input faims_attribute_name="External Photo Filenames" faims_attribute_type="measure" ref="External_Photo_Filenames">
+          <label>{External_Photo_Filenames}</label>
+        </input>
+      </group>
+      <group ref="Spit">
+        <label>{Spit}</label>
+        <trigger ref="New_Spit">
+          <label>{New_Spit}</label>
+        </trigger>
+        <select1 appearance="compact" ref="List_of_Spits">
+          <label>{List_of_Spits}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+      </group>
+    </group>
+    <group ref="Spit" faims_archent_type="Spit">
+      <label>{Spit}</label>
+      <group ref="General">
+        <label>{General}</label>
+        <input faims_attribute_name="Spit ID" faims_attribute_type="measure" ref="Spit_ID" faims_certainty="false">
+          <label>{Spit_ID}</label>
+        </input>
+        <input faims_attribute_name="Shovel Probe ID" faims_attribute_type="measure" ref="Shovel_Probe_ID" faims_certainty="false">
+          <label>{Shovel_Probe_ID}</label>
+        </input>
+        <input faims_attribute_name="Project ID" faims_attribute_type="measure" ref="Project_ID" faims_certainty="false">
+          <label>{Project_ID}</label>
+        </input>
+        <input faims_attribute_name="Spit author" faims_attribute_type="measure" ref="Spit_author" faims_read_only="true" faims_certainty="false">
+          <label>{Author}</label>
+        </input>
+        <input faims_attribute_name="Spit timestamp" faims_attribute_type="measure" ref="Spit_timestamp" faims_read_only="true">
+          <label>{Timestamp}</label>
+        </input>
+      </group>
+      <group ref="Photo">
+        <label>{Photo}</label>
+        <select faims_sync="true" type="camera" faims_attribute_name="Photo" faims_attribute_type="measure" ref="Photo">
+          <label>{Photo}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select>
+        <trigger ref="Photo_Button_1">
+          <label>{Photo}</label>
+        </trigger>
+        <input faims_attribute_name="Photo Comments" faims_attribute_type="measure" ref="Photo_Comments">
+          <label>{Photo_Comments}</label>
+        </input>
+        <input faims_attribute_name="External Photo Filenames" faims_attribute_type="measure" ref="External_Photo_Filenames">
+          <label>{External_Photo_Filenames}</label>
+        </input>
+      </group>
+      <group ref="Layer">
+        <label>{Layer}</label>
+        <trigger ref="New_Layer">
+          <label>{New_Layer}</label>
+        </trigger>
+        <select1 appearance="compact" ref="List_of_Layers">
+          <label>{List_of_Layers}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
+      </group>
+    </group>
+    <group ref="Layer" faims_archent_type="Layer">
+      <label>{Layer}</label>
+      <group ref="General">
+        <label>{General}</label>
+        <input faims_attribute_name="Layer ID" faims_attribute_type="measure" ref="Layer_ID" faims_certainty="false">
+          <label>{Layer_ID}</label>
+        </input>
+        <input faims_attribute_name="Spit ID" faims_attribute_type="measure" ref="Spit_ID" faims_certainty="false">
+          <label>{Spit_ID}</label>
+        </input>
+        <input faims_attribute_name="Shovel Probe ID" faims_attribute_type="measure" ref="Shovel_Probe_ID" faims_certainty="false">
+          <label>{Shovel_Probe_ID}</label>
+        </input>
+        <input faims_attribute_name="Project ID" faims_attribute_type="measure" ref="Project_ID" faims_certainty="false">
+          <label>{Project_ID}</label>
+        </input>
+        <input faims_attribute_name="Layer author" faims_attribute_type="measure" ref="Layer_author" faims_read_only="true" faims_certainty="false">
+          <label>{Author}</label>
+        </input>
+        <input faims_attribute_name="Layer timestamp" faims_attribute_type="measure" ref="Layer_timestamp" faims_read_only="true">
+          <label>{Timestamp}</label>
+        </input>
+        <input faims_attribute_name="Soil Profile" faims_attribute_type="measure" ref="Soil_Profile">
+          <label>{Soil_Profile}</label>
+        </input>
+        <input faims_attribute_name="Total Depth" faims_attribute_type="measure" ref="Total_Depth">
+          <label>{Total_Depth}</label>
+        </input>
+        <input faims_attribute_name="Cultural Material Type" faims_attribute_type="measure" ref="Cultural_Material_Type">
+          <label>{Cultural_Material_Type}</label>
+        </input>
+        <input faims_attribute_name="Artefact Number" faims_attribute_type="measure" ref="Artefact_Number">
+          <label>{Artefact_Number}</label>
+        </input>
+        <input faims_attribute_name="Comments" faims_attribute_type="measure" ref="Comments">
+          <label>{Comments}</label>
+        </input>
+      </group>
+      <group ref="Photo">
+        <label>{Photo}</label>
+        <select faims_sync="true" type="camera" faims_attribute_name="Photo" faims_attribute_type="measure" ref="Photo">
+          <label>{Photo}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select>
+        <trigger ref="Photo_Button_1">
+          <label>{Photo}</label>
+        </trigger>
+        <input faims_attribute_name="Photo Comments" faims_attribute_type="measure" ref="Photo_Comments">
+          <label>{Photo_Comments}</label>
+        </input>
+        <input faims_attribute_name="External Photo Filenames" faims_attribute_type="measure" ref="External_Photo_Filenames">
+          <label>{External_Photo_Filenames}</label>
+        </input>
+      </group>
+    </group>
+  </h:body>
+</h:html>
