@@ -12,7 +12,7 @@
 <Control f="nodata">
 	<Control f="noscroll">
 
-		<New_Project t="input" l="Project"/>
+		<New_Project t="button" l="Project"/>
 
  		<GPS_diagnostics t="gpsdiag"/>
 		<Recent_records t="list"/>
@@ -45,6 +45,7 @@
 	<fmt>PR{{Project_ID}}</fmt>
 	<General>
 		<Project_ID f="id autonum nocertainty"/>
+		<Project_Name t="input"/>
 		<author f="nocertainty noannotation"/>
 		<timestamp f="nocertainty noannotation"/>
 		<gps f="notnull"/>
@@ -83,13 +84,6 @@
 		<Site-PAD_Name t="input"/>
 		<Landform>
 			<!--@SOURCE: vocabs/landform.xml-->
-			<opts>
-				<opt>Mountainous</opt>
-				<opt>Plain</opt>
-				<opt>Rolling Hills</opt>
-				<opt>Steep Hills</opt>
-				<opt>Undulating Plain</opt>
-			</opts>
 		</Landform>
 	</General>
 	<Photo>

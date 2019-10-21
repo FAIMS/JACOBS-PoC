@@ -51,6 +51,7 @@
           <Project>
             <General>
               <Project_ID/>
+              <Project_Name/>
               <Project_author/>
               <Project_timestamp/>
               <Colgroup_1>
@@ -214,9 +215,9 @@
       <label>{Control}</label>
       <group ref="Control" faims_scrollable="false">
         <label>{Control}</label>
-        <input ref="New_Project">
+        <trigger ref="New_Project">
           <label>{New_Project}</label>
-        </input>
+        </trigger>
         <input faims_read_only="true" ref="GPS_diagnostics">
           <label>{GPS_diagnostics}</label>
         </input>
@@ -282,6 +283,9 @@
         <label>{General}</label>
         <input faims_attribute_name="Project ID" faims_attribute_type="measure" ref="Project_ID" faims_certainty="false">
           <label>{Project_ID}</label>
+        </input>
+        <input faims_attribute_name="Project Name" faims_attribute_type="measure" ref="Project_Name">
+          <label>{Project_Name}</label>
         </input>
         <input faims_attribute_name="Project author" faims_attribute_type="measure" ref="Project_author" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Author}</label>
@@ -411,7 +415,7 @@
           <label>{Site_PAD_Name}</label>
         </input>
         <select1 faims_attribute_name="Landform" faims_attribute_type="vocab" ref="Landform">
-          <label>{_SOURCE__vocabs_landform_xml}</label>
+          <label>{Landform}</label>
           <item>
             <label>Options not loaded</label>
             <value>Options not loaded</value>

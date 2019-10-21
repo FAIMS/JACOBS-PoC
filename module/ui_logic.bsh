@@ -315,7 +315,7 @@ NODATA_TAB_GROUPS.add("User_List");
 NODATA_TAB_GROUPS.add("Control");
 
 REF_TO_TYPE.put("User_List/User_List/User_List", "list");
-REF_TO_TYPE.put("Control/Control/New_Project", "input");
+REF_TO_TYPE.put("Control/Control/New_Project", "button");
 REF_TO_TYPE.put("Control/Control/GPS_diagnostics", "gpsdiag");
 REF_TO_TYPE.put("Control/Control/Recent_records", "list");
 REF_TO_TYPE.put("Control/Search/Search_Term", "input");
@@ -327,6 +327,7 @@ REF_TO_TYPE.put("Control/Autonumbering/Next_Shovel_Probe_ID", "input");
 REF_TO_TYPE.put("Control/Autonumbering/Next_Spit_ID", "input");
 REF_TO_TYPE.put("Control/Autonumbering/Next_Layer_ID", "input");
 REF_TO_TYPE.put("Project/General/Project_ID", "input");
+REF_TO_TYPE.put("Project/General/Project_Name", "input");
 REF_TO_TYPE.put("Project/General/Project_author", "input");
 REF_TO_TYPE.put("Project/General/Project_timestamp", "input");
 REF_TO_TYPE.put("Project/General/Latitude", "input");
@@ -400,6 +401,7 @@ REF_TO_TYPE.put("Layer/General", "tab");
 REF_TO_TYPE.put("Layer/Photo", "tab");
 
 DATA_REFS.add("Project/General/Project_ID");
+DATA_REFS.add("Project/General/Project_Name");
 DATA_REFS.add("Project/General/Project_author");
 DATA_REFS.add("Project/General/Project_timestamp");
 DATA_REFS.add("Project/General/Latitude");
