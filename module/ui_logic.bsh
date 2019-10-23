@@ -359,7 +359,7 @@ REF_TO_TYPE.put("Shovel_Probe/Photo/Photo_Button_1", "button");
 REF_TO_TYPE.put("Shovel_Probe/Photo/Photo_Comments", "input");
 REF_TO_TYPE.put("Shovel_Probe/Photo/External_Photo_Filenames", "input");
 REF_TO_TYPE.put("Shovel_Probe/Spit/New_Spit", "button");
-REF_TO_TYPE.put("Shovel_Probe/Spit/List_of_Spits", "list");
+REF_TO_TYPE.put("Shovel_Probe/Spit/List_of_Related_Spits", "list");
 REF_TO_TYPE.put("Spit/General/Spit_ID", "input");
 REF_TO_TYPE.put("Spit/General/Shovel_Probe_ID", "input");
 REF_TO_TYPE.put("Spit/General/Project_ID", "input");
@@ -370,7 +370,7 @@ REF_TO_TYPE.put("Spit/Photo/Photo_Button_1", "button");
 REF_TO_TYPE.put("Spit/Photo/Photo_Comments", "input");
 REF_TO_TYPE.put("Spit/Photo/External_Photo_Filenames", "input");
 REF_TO_TYPE.put("Spit/Layer/New_Layer", "button");
-REF_TO_TYPE.put("Spit/Layer/List_of_Layers", "list");
+REF_TO_TYPE.put("Spit/Layer/List_of_Related_Layers", "list");
 REF_TO_TYPE.put("Layer/General/Layer_ID", "input");
 REF_TO_TYPE.put("Layer/General/Spit_ID", "input");
 REF_TO_TYPE.put("Layer/General/Shovel_Probe_ID", "input");
@@ -4577,13 +4577,13 @@ ENTITY_MENUS.add(new String[] {
     "Project - Shovel Probe"
 });
 ENTITY_MENUS.add(new String[] {
-    "Shovel_Probe/Spit/List_of_Spits",
+    "Shovel_Probe/Spit/List_of_Related_Spits",
     "getUuid(\"Shovel_Probe\")",
     "Spit",
     "Shovel Probe - Spit"
 });
 ENTITY_MENUS.add(new String[] {
-    "Spit/Layer/List_of_Layers",
+    "Spit/Layer/List_of_Related_Layers",
     "getUuid(\"Spit\")",
     "Layer",
     "Spit - Layer"
@@ -4604,8 +4604,8 @@ for (m : ENTITY_MENUS) {
 }
 
 addOnEvent("Project/General/List_of_Related_Shovel_Probes", "click", "loadEntity()");
-addOnEvent("Shovel_Probe/Spit/List_of_Spits", "click", "loadEntity()");
-addOnEvent("Spit/Layer/List_of_Layers", "click", "loadEntity()");
+addOnEvent("Shovel_Probe/Spit/List_of_Related_Spits", "click", "loadEntity()");
+addOnEvent("Spit/Layer/List_of_Related_Layers", "click", "loadEntity()");
 /******************************************************************************/
 /*                             HANDWRITTEN LOGIC                              */
 /******************************************************************************/

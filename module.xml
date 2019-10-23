@@ -93,7 +93,7 @@
 	</Photo>
 	<Spit>
 		<New_Spit t="button" lc="Spit"/>
-		<List_of_Spits ec="Spit"/>
+		<List_of_Related_Spits ec="Spit"/>
 	</Spit>
 </Shovel_Probe>
 
@@ -128,7 +128,7 @@
 	</Photo>
 	<Layer>
 		<New_Layer t="button" lc="Layer"/>
-		<List_of_Layers ec="Layer"/>
+		<List_of_Related_Layers ec="Layer"/>
 	</Layer>	
 </Spit>
 
