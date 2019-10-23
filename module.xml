@@ -15,7 +15,6 @@
 		<New_Project t="button" l="Project"/>
 
  		<GPS_diagnostics t="gpsdiag"/>
-		<Recent_records t="list"/>
 
 	</Control>
 
@@ -73,10 +72,14 @@
 <Shovel_Probe>
 	<fmt>PR{{Project_ID}}-SH{{Shovel_Probe_ID}}</fmt>
 	<General>
-		<Shovel_Probe_ID f="id autonum nocertainty"/>
-		<Project_ID f="id nocertainty" i="Project/General/Project_ID"/>
+		<cols>
+			<Shovel_Probe_ID f="id autonum nocertainty"/>
+			<col>
+				<Project_ID f="id nocertainty" i="Project/General/Project_ID"/>
+			</col>
+		</cols>
 		<author f="nocertainty noannotation"/>
-		<timestamp f="nocertainty noannotation"/>
+		<timestamp f="nocertainty noannotation"/>	
 		<Team_Members i="Project/General/Team_Members" f="nocertainty"/>
 		<TP_Number b="decimal"/>
 		<PAD_Number b="decimal"/>
@@ -115,9 +118,13 @@
 <Spit>
 	<fmt>PR{{Project_ID}}-SH{{Shovel_Probe_ID}}-SP{{Spit_ID}}</fmt>
 	<General>
-		<Spit_ID f="id autonum nocertainty"/>
-		<Shovel_Probe_ID f="id nocertainty" i="Shovel_Probe/General/Shovel_Probe_ID"/>
-		<Project_ID f="id nocertainty" i="Shovel_Probe/General/Project_ID"/>
+		<cols>
+			<Spit_ID f="id autonum nocertainty"/>
+			<col>
+				<Shovel_Probe_ID f="id nocertainty" i="Shovel_Probe/General/Shovel_Probe_ID"/>
+				<Project_ID f="id nocertainty" i="Shovel_Probe/General/Project_ID"/>
+			</col>
+		</cols>
 		<author f="nocertainty noannotation"/>
 		<timestamp f="nocertainty"/>
 	</General>
@@ -148,10 +155,14 @@
 <Layer>
 	<fmt>PR{{Project_ID}}-SH{{Shovel_Probe_ID}}-SP{{Spit_ID}}-LA{{Layer_ID}}</fmt>
 	<General>
-		<Layer_ID f="id autonum nocertainty"/>
-		<Spit_ID f="id nocertainty" i="Spit/General/Spit_ID"/>
-		<Shovel_Probe_ID f="id nocertainty" i="Spit/General/Shovel_Probe_ID"/>
-		<Project_ID f="id nocertainty" i="Spit/General/Project_ID"/>
+		<cols>
+			<Layer_ID f="id autonum nocertainty"/>
+			<col>
+				<Spit_ID f="id nocertainty" i="Spit/General/Spit_ID"/>
+				<Shovel_Probe_ID f="id nocertainty" i="Spit/General/Shovel_Probe_ID"/>
+				<Project_ID f="id nocertainty" i="Spit/General/Project_ID"/>
+			</col>
+		</cols>
 		<author f="nocertainty"/>
 		<timestamp f="nocertainty"/>
 		<Soil_Profile/>

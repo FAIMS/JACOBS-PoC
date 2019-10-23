@@ -317,7 +317,6 @@ NODATA_TAB_GROUPS.add("Control");
 REF_TO_TYPE.put("User_List/User_List/User_List", "list");
 REF_TO_TYPE.put("Control/Control/New_Project", "button");
 REF_TO_TYPE.put("Control/Control/GPS_diagnostics", "gpsdiag");
-REF_TO_TYPE.put("Control/Control/Recent_records", "list");
 REF_TO_TYPE.put("Control/Search/Search_Term", "input");
 REF_TO_TYPE.put("Control/Search/Search_Button", "button");
 REF_TO_TYPE.put("Control/Search/Entity_Types", "dropdown");

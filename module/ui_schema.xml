@@ -27,7 +27,6 @@
             <Control>
               <New_Project/>
               <GPS_diagnostics/>
-              <Recent_records/>
             </Control>
             <Search>
               <Colgroup_0>
@@ -81,22 +80,28 @@
           </Project>
           <Shovel_Probe>
             <General>
-              <Shovel_Probe_ID/>
-              <Project_ID/>
+              <Colgroup_1>
+                <Col_1>
+                  <Shovel_Probe_ID/>
+                </Col_1>
+                <Col_2>
+                  <Project_ID/>
+                </Col_2>
+              </Colgroup_1>
               <Shovel_Probe_author/>
               <Shovel_Probe_timestamp/>
               <Team_Members/>
               <TP_Number/>
               <PAD_Number/>
-              <Colgroup_1>
+              <Colgroup_2>
                 <Col_1>
                   <Latitude/>
                 </Col_1>
                 <Col_2>
                   <Longitude/>
                 </Col_2>
-              </Colgroup_1>
-              <Colgroup_2>
+              </Colgroup_2>
+              <Colgroup_3>
                 <Col_1>
                   <Northing/>
                 </Col_1>
@@ -106,7 +111,7 @@
                 <Col_3>
                   <Accuracy/>
                 </Col_3>
-              </Colgroup_2>
+              </Colgroup_3>
               <Take_From_GPS_1/>
               <Site-PAD_Name/>
               <Landform/>
@@ -124,9 +129,15 @@
           </Shovel_Probe>
           <Spit>
             <General>
-              <Spit_ID/>
-              <Shovel_Probe_ID/>
-              <Project_ID/>
+              <Colgroup_1>
+                <Col_1>
+                  <Spit_ID/>
+                </Col_1>
+                <Col_2>
+                  <Shovel_Probe_ID/>
+                  <Project_ID/>
+                </Col_2>
+              </Colgroup_1>
               <Spit_author/>
               <Spit_timestamp/>
             </General>
@@ -143,10 +154,16 @@
           </Spit>
           <Layer>
             <General>
-              <Layer_ID/>
-              <Spit_ID/>
-              <Shovel_Probe_ID/>
-              <Project_ID/>
+              <Colgroup_1>
+                <Col_1>
+                  <Layer_ID/>
+                </Col_1>
+                <Col_2>
+                  <Spit_ID/>
+                  <Shovel_Probe_ID/>
+                  <Project_ID/>
+                </Col_2>
+              </Colgroup_1>
               <Layer_author/>
               <Layer_timestamp/>
               <Soil_Profile/>
@@ -221,13 +238,6 @@
         <input faims_read_only="true" ref="GPS_diagnostics">
           <label>{GPS_diagnostics}</label>
         </input>
-        <select1 appearance="compact" ref="Recent_records">
-          <label>{Recent_records}</label>
-          <item>
-            <label>Options not loaded</label>
-            <value>Options not loaded</value>
-          </item>
-        </select1>
       </group>
       <group ref="Search" faims_scrollable="false">
         <label>{Search}</label>
@@ -351,12 +361,21 @@
       <label>{Shovel_Probe}</label>
       <group ref="General">
         <label>{General}</label>
-        <input faims_attribute_name="Shovel Probe ID" faims_attribute_type="measure" ref="Shovel_Probe_ID" faims_certainty="false">
-          <label>{Shovel_Probe_ID}</label>
-        </input>
-        <input faims_attribute_name="Project ID" faims_attribute_type="measure" ref="Project_ID" faims_certainty="false">
-          <label>{Project_ID}</label>
-        </input>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Shovel Probe ID" faims_attribute_type="measure" ref="Shovel_Probe_ID" faims_certainty="false">
+              <label>{Shovel_Probe_ID}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Project ID" faims_attribute_type="measure" ref="Project_ID" faims_certainty="false">
+              <label>{Project_ID}</label>
+            </input>
+          </group>
+        </group>
         <input faims_attribute_name="Shovel Probe author" faims_attribute_type="measure" ref="Shovel_Probe_author" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Author}</label>
         </input>
@@ -372,7 +391,7 @@
         <input faims_attribute_name="PAD Number" faims_attribute_type="measure" ref="PAD_Number">
           <label>{PAD_Number}</label>
         </input>
-        <group ref="Colgroup_1" faims_style="orientation">
+        <group ref="Colgroup_2" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
@@ -387,7 +406,7 @@
             </input>
           </group>
         </group>
-        <group ref="Colgroup_2" faims_style="orientation">
+        <group ref="Colgroup_3" faims_style="orientation">
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
@@ -459,15 +478,24 @@
       <label>{Spit}</label>
       <group ref="General">
         <label>{General}</label>
-        <input faims_attribute_name="Spit ID" faims_attribute_type="measure" ref="Spit_ID" faims_certainty="false">
-          <label>{Spit_ID}</label>
-        </input>
-        <input faims_attribute_name="Shovel Probe ID" faims_attribute_type="measure" ref="Shovel_Probe_ID" faims_certainty="false">
-          <label>{Shovel_Probe_ID}</label>
-        </input>
-        <input faims_attribute_name="Project ID" faims_attribute_type="measure" ref="Project_ID" faims_certainty="false">
-          <label>{Project_ID}</label>
-        </input>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Spit ID" faims_attribute_type="measure" ref="Spit_ID" faims_certainty="false">
+              <label>{Spit_ID}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Shovel Probe ID" faims_attribute_type="measure" ref="Shovel_Probe_ID" faims_certainty="false">
+              <label>{Shovel_Probe_ID}</label>
+            </input>
+            <input faims_attribute_name="Project ID" faims_attribute_type="measure" ref="Project_ID" faims_certainty="false">
+              <label>{Project_ID}</label>
+            </input>
+          </group>
+        </group>
         <input faims_attribute_name="Spit author" faims_attribute_type="measure" ref="Spit_author" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Author}</label>
         </input>
@@ -512,18 +540,27 @@
       <label>{Layer}</label>
       <group ref="General">
         <label>{General}</label>
-        <input faims_attribute_name="Layer ID" faims_attribute_type="measure" ref="Layer_ID" faims_certainty="false">
-          <label>{Layer_ID}</label>
-        </input>
-        <input faims_attribute_name="Spit ID" faims_attribute_type="measure" ref="Spit_ID" faims_certainty="false">
-          <label>{Spit_ID}</label>
-        </input>
-        <input faims_attribute_name="Shovel Probe ID" faims_attribute_type="measure" ref="Shovel_Probe_ID" faims_certainty="false">
-          <label>{Shovel_Probe_ID}</label>
-        </input>
-        <input faims_attribute_name="Project ID" faims_attribute_type="measure" ref="Project_ID" faims_certainty="false">
-          <label>{Project_ID}</label>
-        </input>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Layer ID" faims_attribute_type="measure" ref="Layer_ID" faims_certainty="false">
+              <label>{Layer_ID}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Spit ID" faims_attribute_type="measure" ref="Spit_ID" faims_certainty="false">
+              <label>{Spit_ID}</label>
+            </input>
+            <input faims_attribute_name="Shovel Probe ID" faims_attribute_type="measure" ref="Shovel_Probe_ID" faims_certainty="false">
+              <label>{Shovel_Probe_ID}</label>
+            </input>
+            <input faims_attribute_name="Project ID" faims_attribute_type="measure" ref="Project_ID" faims_certainty="false">
+              <label>{Project_ID}</label>
+            </input>
+          </group>
+        </group>
         <input faims_attribute_name="Layer author" faims_attribute_type="measure" ref="Layer_author" faims_read_only="true" faims_certainty="false">
           <label>{Author}</label>
         </input>
